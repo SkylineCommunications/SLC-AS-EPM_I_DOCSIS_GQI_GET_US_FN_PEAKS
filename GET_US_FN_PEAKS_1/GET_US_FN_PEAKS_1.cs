@@ -45,7 +45,7 @@ Revision History:
 
 DATE		VERSION		AUTHOR			COMMENTS
 
-25/06/2024	1.0.0.1		XXX, Skyline	Initial version
+25/06/2024	1.0.0.1		EPA, Skyline	Initial version
 ****************************************************************************
 */
 
@@ -53,55 +53,167 @@ namespace GET_US_FN_PEAKS_1
 {
 	using System;
 	using System.Collections.Generic;
-	using System.Globalization;
-	using System.Text;
-	using Skyline.DataMiner.Automation;
-	
-	/// <summary>
-	/// Represents a DataMiner Automation script.
-	/// </summary>
-	public class Script
+	using System.IO;
+	using System.Linq;
+	using Newtonsoft.Json;
+	using Skyline.DataMiner.Analytics.GenericInterface;
+	using Skyline.DataMiner.Net.Messages;
+
+	[GQIMetaData(Name = "EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS")]
+	public class Script : IGQIDataSource, IGQIInputArguments, IGQIOnInit
 	{
-		/// <summary>
-		/// The script entry point.
-		/// </summary>
-		/// <param name="engine">Link with SLAutomation process.</param>
-		public void Run(IEngine engine)
+		private readonly GQIStringArgument frontEndElementArg = new GQIStringArgument("Front End Element")
 		{
+			IsRequired = false,
+		};
+
+		private readonly GQIDateTimeArgument initialTimeArg = new GQIDateTimeArgument("Initial Time")
+		{
+			IsRequired = false,
+		};
+
+		private readonly GQIDateTimeArgument finalTimeArg = new GQIDateTimeArgument("Final Time")
+		{
+			IsRequired = false,
+		};
+
+		private GQIDMS _dms;
+
+		private DateTime initialTime;
+
+		private DateTime finalTime;
+
+		private string frontEndElement;
+
+		private List<GQIRow> listGqiRows = new List<GQIRow> { };
+
+		public OnInitOutputArgs OnInit(OnInitInputArgs args)
+		{
+			_dms = args.DMS;
+			return new OnInitOutputArgs();
+		}
+
+		public GQIColumn[] GetColumns()
+		{
+			return new GQIColumn[]
+			{
+			new GQIStringColumn("Fiber Node"),
+			new GQIDoubleColumn("SCQAM 5-65 Peak"),
+			new GQIDoubleColumn("SCQAM 65-204 Peak"),
+			new GQIDoubleColumn("OFDMA Peak"),
+			};
+		}
+
+		public GQIPage GetNextPage(GetNextPageInputArgs args)
+		{
+			return new GQIPage(listGqiRows.ToArray())
+			{
+				HasNextPage = false,
+			};
+		}
+
+		public GQIArgument[] GetInputArguments()
+		{
+			return new GQIArgument[]
+			{
+				frontEndElementArg,
+				initialTimeArg,
+				finalTimeArg,
+			};
+		}
+
+		public OnArgumentsProcessedOutputArgs OnArgumentsProcessed(OnArgumentsProcessedInputArgs args)
+		{
+			listGqiRows.Clear();
 			try
 			{
-				RunSafe(engine);
+				initialTime = args.GetArgumentValue(initialTimeArg);
+				finalTime = args.GetArgumentValue(finalTimeArg);
+				frontEndElement = args.GetArgumentValue(frontEndElementArg);
+
+				var dmaID = frontEndElement.Split('/').First();
+				int.TryParse(dmaID, out var hostID);
+				var response = GetUsFNPeaks(hostID, initialTime, finalTime);
+
+				Dictionary<string, FiberNodeRow> fiberNodeRow = JsonConvert.DeserializeObject<Dictionary<string, FiberNodeRow>>(response["Response"]);
+				CreateRows(fiberNodeRow);
 			}
-			catch (ScriptAbortException)
+			catch
 			{
-				// Catch normal abort exceptions (engine.ExitFail or engine.ExitSuccess)
-				throw; // Comment if it should be treated as a normal exit of the script.
+				listGqiRows = new List<GQIRow>();
 			}
-			catch (ScriptForceAbortException)
+
+			return new OnArgumentsProcessedOutputArgs();
+		}
+
+		private Dictionary<string, string> GetUsFNPeaks(int dmaId, DateTime initialTime, DateTime finalTime)
+		{
+			Skyline.DataMiner.Net.Messages.ExecuteScriptMessage scriptMessage = new ExecuteScriptMessage
 			{
-				// Catch forced abort exceptions, caused via external maintenance messages.
-				throw;
-			}
-			catch (ScriptTimeoutException)
+				DataMinerID = dmaId,
+				ScriptName = "GetDataAggregatorFiles",
+				Options = new SA(new[] { $"DEFER:{bool.FalseString}", $"PARAMETER:1:{Convert.ToString(initialTime)}", $"PARAMETER:2:{Convert.ToString(finalTime)}", $"PARAMETER:3:false" }),
+			};
+
+			var response = _dms.SendMessage(scriptMessage) as ExecuteScriptResponseMessage;
+			var scriptRTEResult = response?.ScriptOutput;
+			return scriptRTEResult;
+		}
+
+		private void CreateRows(Dictionary<string, FiberNodeRow> response)
+		{
+			foreach (var row in response)
 			{
-				// Catch timeout exceptions for when a script has been running for too long.
-				throw;
-			}
-			catch (InteractiveUserDetachedException)
+				List<GQICell> listGqiCells = new List<GQICell>
+		{
+			new GQICell
 			{
-				// Catch a user detaching from the interactive script by closing the window.
-				// Only applicable for interactive scripts, can be removed for non-interactive scripts.
-				throw;
-			}
-			catch (Exception e)
+				Value = row.Value.FnName,
+			},
+			new GQICell
 			{
-				engine.ExitFail("Run|Something went wrong: " + e);
+				Value = row.Value.UsFnLowSplitUtilization,
+				DisplayValue = ParseDoubleValue(row.Value.UsFnLowSplitUtilization, "%"),
+			},
+			new GQICell
+			{
+				Value = row.Value.UsFnHighSplitUtilization,
+				DisplayValue = ParseDoubleValue(row.Value.UsFnHighSplitUtilization, "%"),
+			},
+			new GQICell
+			{
+				Value = row.Value.OfdmaFnUtilization,
+				DisplayValue = ParseDoubleValue(row.Value.OfdmaFnUtilization, "%"),
+			},
+		};
+				var gqiRow = new GQIRow(listGqiCells.ToArray());
+				listGqiRows.Add(gqiRow);
 			}
 		}
 
-		private void RunSafe(IEngine engine)
+		private string ParseDoubleValue(double doubleValue, string unit)
 		{
-			// TODO: Define code here
+			if (doubleValue.Equals(-1))
+			{
+				return "N/A";
+			}
+
+			return Math.Round(doubleValue, 2).ToString("F2") + " " + unit;
+		}
+
+		public class FiberNodeRow
+		{
+			public string FnName { get; set; }
+
+			public double DsFnUtilization { get; set; }
+
+			public double OfdmFnUtilization { get; set; }
+
+			public double UsFnLowSplitUtilization { get; set; }
+
+			public double UsFnHighSplitUtilization { get; set; }
+
+			public double OfdmaFnUtilization { get; set; }
 		}
 	}
 }

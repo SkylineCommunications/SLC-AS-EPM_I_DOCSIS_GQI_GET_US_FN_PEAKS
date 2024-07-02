@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DMSScript options="272" xmlns="http://www.skyline.be/automation">
+	<Name>GetUsFNPeaks</Name>
+	<Description></Description>
+	<Type>Automation</Type>
+	<Author>SKYLINE2\EPA</Author>
+	<CheckSets>FALSE</CheckSets>
+	<Folder>USPeaks</Folder>
+
+	<Protocols>
+	</Protocols>
+
+	<Memory>
+	</Memory>
+
+	<Parameters>
+		<ScriptParameter id="1" type="string" values="">
+			<Description>initialTime</Description>
+		</ScriptParameter>
+		<ScriptParameter id="2" type="string" values="">
+			<Description>finalTime</Description>
+		</ScriptParameter>
+	</Parameters>
+
+	<Script>
+		<Exe id="4" type="csharp">
+			<Value><![CDATA[[Project:GetUsFNPeaks_1]]]></Value>
+			<!--<Param type="debug">true</Param>-->
+			<Message></Message>
+		</Exe>
+	</Script>
+</DMSScript>

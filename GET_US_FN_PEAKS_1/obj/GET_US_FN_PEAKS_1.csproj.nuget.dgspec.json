@@ -1,26 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GIT\\Automation\\Generic\\DataMiner Solutions\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.csproj": {}
+    "C:\\Users\\57311\\Documents\\GitHub\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.csproj": {}
   },
   "projects": {
-    "C:\\GIT\\Automation\\Generic\\DataMiner Solutions\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.csproj": {
+    "C:\\Users\\57311\\Documents\\GitHub\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GIT\\Automation\\Generic\\DataMiner Solutions\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.csproj",
+        "projectUniqueName": "C:\\Users\\57311\\Documents\\GitHub\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.csproj",
         "projectName": "GET_US_FN_PEAKS_1",
-        "projectPath": "C:\\GIT\\Automation\\Generic\\DataMiner Solutions\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.csproj",
-        "packagesPath": "C:\\Users\\SergioSU\\.nuget\\packages\\",
-        "outputPath": "C:\\GIT\\Automation\\Generic\\DataMiner Solutions\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\obj\\",
+        "projectPath": "C:\\Users\\57311\\Documents\\GitHub\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.csproj",
+        "packagesPath": "C:\\Users\\57311\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\57311\\Documents\\GitHub\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\SergioSU\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\57311\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net48"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://devcore3.skyline.local/nuget/": {}
         },
@@ -45,9 +51,17 @@
         "net48": {
           "targetAlias": "net48",
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Skyline.DataMiner.Dev.Automation": {
               "target": "Package",
-              "version": "[10.2.0.25, )"
+              "version": "[10.4.7, )"
+            },
+            "Skyline.DataMiner.Files.SLAnalyticsTypes": {
+              "target": "Package",
+              "version": "[10.4.7, )"
             },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

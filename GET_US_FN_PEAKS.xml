@@ -3,9 +3,9 @@
 	<Name>GET_US_FN_PEAKS</Name>
 	<Description></Description>
 	<Type>Automation</Type>
-	<Author>SKYLINE2\XXX</Author>
+	<Author>SKYLINE2\EPA</Author>
 	<CheckSets>FALSE</CheckSets>
-	<Folder></Folder>
+	<Folder>I-DOCSIS/AD-HOC DATA SOURCES</Folder>
 
 	<Protocols>
 	</Protocols>
@@ -19,6 +19,8 @@
 	<Script>
 		<Exe id="1" type="csharp">
 			<Value><![CDATA[[Project:GET_US_FN_PEAKS_1]]]></Value>
+			<Param type="preCompile">true</Param>
+			<Param type="libraryName">EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS</Param>
 			<!--<Param type="debug">true</Param>-->
 			<Message></Message>
 		</Exe>
