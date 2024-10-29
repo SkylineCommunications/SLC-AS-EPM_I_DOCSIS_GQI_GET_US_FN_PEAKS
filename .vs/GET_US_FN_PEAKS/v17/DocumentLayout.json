@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\57311\\Documents\\GitHub\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\",
+  "WorkspaceRootPath": "C:\\GIT\\GitHub\\Automation\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9395189-5EFA-412E-B3CE-6490229BFDF2}|GET_US_FN_PEAKS{B9395189-5EFA-412E-B3CE-6490229BFDF2}|C:\\Users\\57311\\Documents\\GitHub\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{B9395189-5EFA-412E-B3CE-6490229BFDF2}|GET_US_FN_PEAKS{B9395189-5EFA-412E-B3CE-6490229BFDF2}|solutionrelative:GET_US_FN_PEAKS.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{01E9DA86-5753-40AB-9D69-649B4532FB2C}|GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.csproj|c:\\git\\github\\automation\\slc-as-epm_i_docsis_gqi_get_us_fn_peaks\\get_us_fn_peaks_1\\get_us_fn_peaks_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E9DA86-5753-40AB-9D69-649B4532FB2C}|GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.csproj|solutionrelative:get_us_fn_peaks_1\\get_us_fn_peaks_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01E9DA86-5753-40AB-9D69-649B4532FB2C}|GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.csproj|c:\\users\\57311\\documents\\github\\slc-as-epm_i_docsis_gqi_get_us_fn_peaks\\get_us_fn_peaks_1\\get_us_fn_peaks_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01E9DA86-5753-40AB-9D69-649B4532FB2C}|GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.csproj|solutionrelative:get_us_fn_peaks_1\\get_us_fn_peaks_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9395189-5EFA-412E-B3CE-6490229BFDF2}|GET_US_FN_PEAKS{B9395189-5EFA-412E-B3CE-6490229BFDF2}|C:\\GIT\\GitHub\\Automation\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{B9395189-5EFA-412E-B3CE-6490229BFDF2}|GET_US_FN_PEAKS{B9395189-5EFA-412E-B3CE-6490229BFDF2}|solutionrelative:GET_US_FN_PEAKS.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,23 +22,7 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{7505da5e-07d6-4842-9870-2f708552e445}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -46,7 +30,11 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{22f8e717-7905-4e00-93a7-c1717c56d1d5}"
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -54,40 +42,16 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{64debe95-07ea-48ac-8744-af87605d624a}"
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GET_US_FN_PEAKS_1.cs",
-              "DocumentMoniker": "C:\\Users\\57311\\Documents\\GitHub\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.cs",
-              "RelativeDocumentMoniker": "GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.cs",
-              "ToolTip": "C:\\Users\\57311\\Documents\\GitHub\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.cs",
-              "RelativeToolTip": "GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAM0AAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T20:03:02.636Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GET_US_FN_PEAKS.xml",
-              "DocumentMoniker": "C:\\Users\\57311\\Documents\\GitHub\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS.xml",
-              "RelativeDocumentMoniker": "GET_US_FN_PEAKS.xml",
-              "ToolTip": "C:\\Users\\57311\\Documents\\GitHub\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS.xml",
-              "RelativeToolTip": "GET_US_FN_PEAKS.xml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2024-06-25T21:39:47.864Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 952,
-          "SelectedChildIndex": -1,
-          "Children": [
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{c3139ba4-79f5-486d-9ce0-b17394d26f9b}"
@@ -97,20 +61,29 @@
               "Name": "ST:0:0:{513ea8d3-d94d-4be6-9179-18ce27f142db}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GET_US_FN_PEAKS_1.cs",
+              "DocumentMoniker": "C:\\GIT\\GitHub\\Automation\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.cs",
+              "RelativeDocumentMoniker": "GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.cs",
+              "ToolTip": "C:\\GIT\\GitHub\\Automation\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.cs",
+              "RelativeToolTip": "GET_US_FN_PEAKS_1\\GET_US_FN_PEAKS_1.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAQwFkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T20:03:02.636Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{5a4e9529-b6a0-46b5-be4f-0f0b239bc0eb}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GET_US_FN_PEAKS.xml",
+              "DocumentMoniker": "C:\\GIT\\GitHub\\Automation\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS.xml",
+              "RelativeDocumentMoniker": "GET_US_FN_PEAKS.xml",
+              "ToolTip": "C:\\GIT\\GitHub\\Automation\\SLC-AS-EPM_I_DOCSIS_GQI_GET_US_FN_PEAKS\\GET_US_FN_PEAKS.xml",
+              "RelativeToolTip": "GET_US_FN_PEAKS.xml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-06-25T21:39:47.864Z"
             }
           ]
         }

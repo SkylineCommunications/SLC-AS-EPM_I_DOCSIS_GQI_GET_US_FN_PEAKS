@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("© Skyline Communications")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf8cf867e720398f4ccced43e3e3435cdf0961c1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0e44489146fa5f6b0cc428ded11170b6a0ab371")]
 [assembly: System.Reflection.AssemblyProductAttribute("GET_US_FN_PEAKS_1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GET_US_FN_PEAKS_1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
